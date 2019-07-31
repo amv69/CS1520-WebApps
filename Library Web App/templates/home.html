@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+	{# neat! you can actually "call" other blocks like methods... since they are. #}
+	<h2>{{ self.title() }}</h2>
+
+	{# this is the basic test we're using to see if someone is logged in.
+		you'll have to extend this logic further... #}
+	{% if g.user %}
+		<p>Welcome back! Here's where I'll tell you how to borrow books</p>
+		<table>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Status</th>
+			{% for book in allBooks %}
+			<tr>
+				<td> {{ book.title }} </td>
+				<td> {{ book.author }} </td>
+				<td> 
+					 {% if book in g.user.borrows %}
+					 <form method="post">
+    				 	<button type="submit" name='book_id' value={{book.book_id}}>Return this book</button>
+					 	</form>
+				 	 {% else %}
+				 	 <form method="post">
+    				 	<button type="submit" name='book_id' value={{book.book_id}}>Borrow this book</button>
+					 	</form>
+					 {% endif %}
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<h3>Welcome!</h3>
+		<p>This is a book listing site used to keep track of a library!</p>
+		<p>Here is a listing of all our books </p>
+		<table>
+			<th>Title</th>
+			<th>Author</th>
+			{% for book in allBooks %}
+			<tr>
+				<td> {{ book.title }} </td>
+				<td> {{ book.author }} </td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+
+		
+		
+{% endblock %}

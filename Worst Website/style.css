@@ -1,0 +1,79 @@
+.crab {
+    background-image: url('crab.gif');
+    background-size: cover;
+    height: 100vh;
+}
+
+
+h1.center {
+    text-align: center;
+    padding-top: 17%;
+    padding-bottom: 15%;
+    font-size: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1.white {
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+footer.fixed {
+    position: fixed;
+    bottom: -10px;
+    left: 40%;
+
+}
+
+h1.intro {
+    font-size: 150%;
+    font-family: cursive;
+}
+
+div.side {
+    display: inline-block;
+}
+
+img.swamp {
+    float: left;
+
+}
+img.sw {
+    float: right;
+}
+
+p.bio {
+    font-size: 170%;
+    font-family: sans-serif;
+    background-color: forestgreen;
+    color: white;
+    margin-bottom: 0px;
+}
+
+header.vapor {
+    background-image: url("vapor.gif");
+}
+
+body.nospace {
+    padding: 0;
+    margin: 0;
+     background-image: url("burger.gif");
+}
+body.intro {
+    margin-top:-16px;
+}
+main{
+    margin-top:-27px;
+}
+input.move{
+    float: left;
+}
+.button{
+    background-color: fuchsia;
+    text-align: center;
+    font-size: 16px;
+}

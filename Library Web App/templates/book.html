@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{somebook.title}}{% endblock %}
+
+{% block main %}
+	<h2>{{ self.title() }}</h2>
+
+	{% if error %}
+		<div class="error"><strong>Error:</strong> {{ error }}</div>
+	{% endif %}
+		<dl>
+			<dt>Title:
+			<dd><p> {{ somebook.title }}
+			<dt>Author:
+			<dd><p> {{ somebook.author }}
+			<dt>Book ID:
+			<dd><p> {{ somebook.book_id}}
+		</dl>
+
+		<p> Number of Borrowers = {{ numberOfBorrows}}
+{% endblock %}
